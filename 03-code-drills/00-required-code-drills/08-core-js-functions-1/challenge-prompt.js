@@ -1,6 +1,9 @@
 // define a function "fun" that console logs "Functions are FUN!"
 
+function fun() {
+    console.log("functions sare FUN!");
 
+}
 
 // before moving on, open index.html and see what console logs have been made.
 // why doesn't "Functions are FUN! appear yet?"
@@ -8,11 +11,16 @@
 
 Your Answer here
 
+we have not called the function
 */
+
 
 
 // define a function "thirtySeven" that console logs the sum of 18 and 19
 
+function thirtySeven(){
+    console.log(18+19);
+}
 
 
 // call two functions you've defined so far

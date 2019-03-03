@@ -87,6 +87,18 @@
 
     // If it does, console log "hello Mr. Farley"
 
+    if (characterOneName = Mr. Farley) {
+        console.log("Hello " + characterOneName);
+    }
+
+    else if (characterOneName = Ms. Farley) {
+        console.log("Hello " + characterOneName);
+    }
+
+    else {
+        console.log("Hello stranger")
+    }
+
     
 // Else, check if `characterOneName` is "Ms.Farley"
 
