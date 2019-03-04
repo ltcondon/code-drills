@@ -27,10 +27,13 @@ function returnCustomObject(arr){
   
   // ---------- Your Code Here ----------
 
-
-
-
-
+  for (var i = 0; i < arr.length; i++) {
+    if (obj[arr[i]]) {
+      obj[arr[i]] += 1;
+    } else {
+      obj[arr[i]] = 1;
+    }
+  }
 
   // ---------- End of Code Area ----------
 
@@ -55,7 +58,6 @@ console.log(toyInventoryObj);
 
 
 
-
 // ------------------------------------------------------------------
 console.log("==================== Question 02  ====================");
 // Evaluating Values in a Object:
@@ -65,9 +67,19 @@ console.log("==================== Question 02  ====================");
 
 function greatestFrequency(toyInventory){
   var maxToy, maxNum;
-  
+
+
   // ---------- Your Code Here ----------
 
+  maxNum = 0;
+
+  for (item in toyInventory) {
+
+    if (toyInventory[item] > maxNum){
+			maxNum = toyInventory[item];
+			maxToy = item;
+		}
+  }
 
 
 
@@ -96,14 +108,15 @@ var toyArray = ["Iron Man vs. Ultron","Iron Man vs. Loki","Park Animals", "Adven
 
 function toyArrToObj(arrayOfToys){
   
-  var toyArrayOfObjs = [];
-
   // ---------- Your Code Here ----------
 
+  var toyArrayOfObjs = [];
 
-
-
-
+  for (var i = 0; i < arrayOfToys.length; i++) {
+     var toyObj = {};
+     toyObj.name = arrayOfToys[i];
+     toyArrayOfObjs.push(toyObj);
+  }
 
   // ---------- End of Code Area ----------
 
@@ -134,7 +147,7 @@ console.log("==================== Question 04  ====================");
 // - An array holding the names of each toy in that line
 // - number of total number of toys in stock for that line
 
-// The desired Object that you should expect is a Object that looks like this:
+// The desired Object that you should expect is an Object that looks like this:
 
 // { 'Potato Head Series': 
 //    { toyLine: 'Potato Head Series',
@@ -210,10 +223,24 @@ toyInventoryArrayOfObjects = [
  }];
 
 // Iterate over each object in the provided `toyInventoryArrayOfObjects` and create a custom object: `customToyLineObject`.
-// We can to consolidate the array of toy objects into a toyline object as defined by the instructions above
+// We can consolidate the array of toy objects into a toyline object as defined by the instructions above
 function createCustomObject(objectArr){
 
-	customToyLineObj = {};
+   customToyLineObj = {};
+   
+   for (var i = 0; i < objectArr.length; i++) {
+      if(customToyLineObj[objectArr[i].toyLine]){
+			customToyLineObj[objectArr[i].toyLine].toyLineToys.push(objectArr[i].title);
+			customToyLineObj[objectArr[i].toyLine].totalToysInToyLine += objectArr[i].stock;
+   }
+   else {
+      customToyLineObj[objectArr[i].toyline] = {
+         toyline: objectArr[i].toyline,
+         toyLineToys: objectArr[i].title,
+         totalToysInToyLine: objectArr[i].stock
+   }
+   }
+}
 
   // ---------- Your Code Here ----------
 
@@ -256,20 +283,29 @@ console.log(testObject(customObject));
 console.log("==================== Question 05  ====================");
 // Write a function that when passed an array of numbers, returns true if there are
 // duplicate numbers within that array and false if there are no duplicates within
-// the argument
+// the array
 
-function areDups(arr){
 
   // ---------- Your Code Here ----------
 
-
+function areDups(arr){
+   var newArr = [];
+   for (var i = 0; i < arr.length; i++) {
+         if (newArr.includes(arr[i])) {
+            return true;
+         }
+         else {
+         newArr.push(arr[i]);
+         }
+   }
+   return false;
+}
 
 
 
 
   // ---------- End of Code Area ----------
 
-}
 
 // These arrays are going to be used to test your function
 var duplicatesOne = [1,2,4,5,77,8,19,4];
