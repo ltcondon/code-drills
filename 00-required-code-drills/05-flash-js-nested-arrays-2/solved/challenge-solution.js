@@ -229,7 +229,7 @@ function createCustomObject(objectArr){
     // if the toyline already exists, add the current toy to the "toyLineToys" array
     // and add the stock of the current toy to the toyline stock 
 		if(customToyLineObj[objectArr[i].toyLine]){
-			customToyLineObj[objectArr[i].toyLine].toyLineToys.push(objectArr[i].title)
+			customToyLineObj[objectArr[i].toyLine].toyLineToys.push(objectArr[i].title);
 			customToyLineObj[objectArr[i].toyLine].totalToysInToyLine += objectArr[i].stock
       
     // otherwise, instantiate a new toyline object within our `customToyLineObj`

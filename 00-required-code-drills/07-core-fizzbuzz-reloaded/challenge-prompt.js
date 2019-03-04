@@ -6,37 +6,36 @@
 function checkWibble(str) {
 
   // ---------- Your Code Here ----------
-
-
-
-
-
-
-
-
+var count = 0;
+for (var i = 0; i < str.length; i++) {
+  count++;
+}
+if (count % 2 == 0) {
+  return true;
+}
+return false;
   // ----------- End Code Area -----------
 
 }
-
 
 // This function checks whether the argument string fulfills the requirements
 // for "Wobble". It should return true if the string has an odd number of vowels
 // and false if it doesn't
 function checkWobble(str) {
-
+  var vowels = ["a", "e", "i", "o", "u"];
+  var vowelNum = 0;
   // ---------- Your Code Here ----------
+  for (var i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      vowelNum++;
+    }
+  }
 
-
-  
-
-
-
-
-
-  // ----------- End Code Area -----------
+  return (vowelNum % 2 == 1);
 
 }
 
+console.log(checkWobble("wobble"));
 
 // This is the `wibbleWobble` function. It takes in an array of strings and replaces
 // the elements that have an even number of characters with "Wibble" and the elements
@@ -45,17 +44,18 @@ function checkWobble(str) {
 // "WibbleWobble". 
 
 function wibbleWobble(arr) {
-  
-  // ---------- Your Code Here ----------
+  for (var i = 0; i < arr.length; i++) {
 
-
-  
-
-
-
-
-
-  // ----------- End Code Area -----------
+    if ((checkWibble(arr[i]) === true) && (checkWobble(arr[i]) === true)) {
+      arr[i] = "WibbleWobble";
+    }
+    else if ((checkWibble(arr[i]) === true) && (checkWobble(arr[i]) !== true)) {
+      arr[i] = "Wibble";
+    }
+    else if ((checkWibble(arr[i]) !== true) && (checkWobble(arr[i]) === true)) {
+      arr[i] = "Wobble";
+    }
+  }
   return arr;
 }
 
