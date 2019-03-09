@@ -12,11 +12,15 @@
   <script>
     function unique(str) {
     // ====================== YOUR WORK HERE ===================
-
-
-
-
-
+      str = str.toLowerCase();
+      for (var i = 0; i < str.length; i++) {
+        for (var j= 0; j < str.length; j++) {
+          if (j!==i && str[j] === str[i]) {
+            return false;
+          }
+        }
+      }
+      return true;
     // =========================================================
     }
     console.log(unique("chicken"))
