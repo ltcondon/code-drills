@@ -7,12 +7,8 @@
 
 // -------------------------------------------------------
 //                Helper Functions (Optional)
-//
+
 // -------------------- Your Code Here --------------------
-
-
-
-
 
 // --------------------- End Code Area --------------------
 
@@ -20,12 +16,45 @@
 // -------------------------------------------------------
 //                        Sort Function
 // -------------------------------------------------------
-function upDownSort(arr) {
+function upDownSort(array) {
   // -------------------- Your Code Here --------------------
 
 
+  var evenNums = [];
+  var oddNums = [];
+  var sortedArray = [];
 
+  for (var i=0; i < array.length; i++) {
+    
+    // if (typeof array[i] === 'number') {
+      
+      if (array[i] % 2 === 0) {
+        evenNums.push(array[i]);
+      }
+      else {
+        oddNums.push(array[i]);
+      };
 
+    //   return (array[i] + " is not a number.");
+    // }
+  }
+
+  evenNums = evenNums.sort(function(a, b) {
+    return a - b;
+  });
+  oddNums = oddNums.sort(function(a, b) {
+    return a - b;
+  });
+
+  for (var i = 0; i < evenNums.length; i++) {
+    sortedArray.push(evenNums[i]);
+  }
+
+  for (var i = 0; i < oddNums.length; i++) {
+    sortedArray.push(oddNums[i]);
+  }
+
+  return sortedArray;
 
   // --------------------- End Code Area --------------------
 }
@@ -48,3 +77,7 @@ console.log("==================== Test 03 ====================");
 var testArr3 = [19, 27, 11, 23, 7, 63, 89, 15, 33, 3];
 console.log("The following should be [89, 63, 33, 27, 23, 19, 15, 11, 7, 3]");
 console.log(upDownSort(testArr3));
+
+console.log("==================== Test 03 ====================");
+var testArr4 = ["a", "h", "l", "b", "g", "x", "y", "y"];
+console.log("These should be in alphabetical order:  " + testArr4.sort());
