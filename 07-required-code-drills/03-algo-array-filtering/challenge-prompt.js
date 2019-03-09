@@ -7,7 +7,25 @@
 
 // -------------------------------------------------------
 //                Helper Functions (Optional)
-//
+  function primeNum (x) {
+    if (typeof x !== 'number') {
+      return false;
+    }
+    if (x < 2) {
+      return false;
+    }
+    for (i = 2; i < x; i++) {
+      if (x % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+console.log(primeNum(9));
+console.log(primeNum(6));
+
+
 // -------------------- Your Code Here --------------------
 
 
@@ -23,9 +41,17 @@
 function primeSort(arr) {
   // -------------------- Your Code Here --------------------
 
+  for (var i = 0; i < arr.length; i++) {
+    if (!primeNum(arr[i])) {
+      arr.splice(i, 1);
+    } 
+  }
 
+  arr.sort(function(a, b) {
+    return b - a;
+  })
 
-
+  return arr;
 
   // --------------------- End Code Area --------------------
 }
