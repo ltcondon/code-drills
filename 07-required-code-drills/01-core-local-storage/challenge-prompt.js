@@ -36,7 +36,9 @@ $(function() {
   // use the default value of buttonColors as defined above. 
   //
   // -------------------- Your Code Here --------------------
-
+  if (localStorage.getItem("#buttons")) {
+    buttonColors = localStorage.getItem("#buttons");
+  }
 
   
 
@@ -61,7 +63,14 @@ $(function() {
     // defined above. After you've updated button colors, store it inside local storage.
     //
     // -------------------- Your Code Here --------------------
+      if (buttonColors[index] === '1') {
+        replaceChar(buttonColors, index, '0');
+      }
+      else {
+        replaceChar(buttonColors, index, '0');
+      }
 
+      localStorage.setItem("buttons");
 
 
 
