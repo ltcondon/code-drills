@@ -91,7 +91,27 @@
 
       // ===================== YOUR CODE HERE ==================
 
-
+      $("#itunes").on("click", function(event) {
+        var searchWord = $("#term").val()
+        
+        $.ajax({
+        url: 'https://itunes.apple.com/search?term='+ searchWord +'&entity=musicTrack',
+        method: "GET"
+        }).then(function (response) {
+            console.log(JSON.parse(response))
+            var resObj = JSON.parse(response).results
+            var newDiv = $("<div>");
+            for (var i = 0; i < resObj.length; i++) {
+              newDiv.append('<img src="' + resObj[i].artworkUrl100 + '"' + "</img>");
+              newDiv.append("<h2>" + resObj[i].trackName + "</h2>");
+              newDiv.append("<h2>" + resObj[i].artistName + "</h2>");
+              newDiv.append("<h2>" + '<audio src="' + resObj[i].previewUrl +'"' + "</audio>" + "</h2>");
+              }
+              
+            $(".library").prepend(newDiv);
+            searchWord.val("")
+          });
+        });
 
 
 
