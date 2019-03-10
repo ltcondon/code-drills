@@ -14,7 +14,16 @@ var sentence = "It is our choices, that show what we truly are, far more than ou
 
 function longestWord(sen) {
     // ====================== YOUR WORK HERE ===================
+  var longestWord = "";
 
+  sen = sen.replace(/,/g, "");
+  var senArray = sen.split(" ");
+  for (var i = 0; i < senArray.length; i++) {
+    if (senArray[i].length > longestWord.length) {
+      longestWord = senArray[i];
+    }
+  }
+  return longestWord;
 
 
 
