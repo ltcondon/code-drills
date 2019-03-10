@@ -72,7 +72,7 @@
 
 
     // STEP 4: Based on your research of this API, assign a value to queryURL you think is appropriate to retrieve the top news stories in the US. 
-    var queryURL = "";
+    var queryURL ='https://newsapi.org/v2/top-headlines?' + 'country=us&' + '7ae5c731a5d64d7bb76515037a4838fb';
 
 
     $.ajax({
@@ -100,6 +100,16 @@
         // The title of each article should go in the h3 with the class of title
         // The author of each article should go in the p tag with the class of author
         // The description of the article should go in the p tag with the class of desc
+
+        console.log(response);
+
+        var newDiv = $("<div>")
+          for (var i=0; i < 6; i++) {
+          newDiv.append("<h3>" + response.articles[i].title + "<h3>");
+          newDiv.append("<p>" + response.articles[i].author + "<p>");
+          newDiv.append("<p>" + response.articles[i].description + "<p>");
+          }
+        $("#news-div").append(newDiv);
 
 
 
