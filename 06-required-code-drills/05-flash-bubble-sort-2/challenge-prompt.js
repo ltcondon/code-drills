@@ -9,7 +9,19 @@
 
 function bubbleSortTwo(arr) {
     // ================= code goes here ===========================
+var elSwapped = false;
 
+while (!elSwapped) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] < arr[i+1]) {
+            elSwapped = false;
+            var temp = arr[i+1];
+            arr[i+1] = arr[i];
+            arr[i] = temp;
+            elSwapped = true;
+        }
+    }
+}
     
 
 

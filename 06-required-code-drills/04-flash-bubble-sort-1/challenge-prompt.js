@@ -14,18 +14,18 @@ function bubbleSort(arr) {
     
 // }
 //     return arr;
-    var i = 0;
-    while (i < arr.length - 1) {
-        if (arr[i] < arr[i+1]) {
-            var temp = arr.splice(i+1, 1);
-            arr.splice(i, 0, temp[0]);
-            i = 0;
-        }
-        i++;
-    }
+
+        for (var i = 0; i < arr.length - 1; i++) {
+            if (arr[i] < arr[i + 1]) {
+                var temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+
     return arr;
 
 // ============================================================
+    }
 }
 
 var testArray = [34, 23, 3, 76, 20, 84, 18, 9];
