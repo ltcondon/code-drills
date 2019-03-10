@@ -8,6 +8,10 @@ $(document).submit(function () {
         method: "GET"
     }).then(function (response) {
         // console.log the response 
+        console.log(response);
+        console.log(response.remaining);
+        console.log(response.deck_id);
+
 
         // console.log the remaining cards
 
