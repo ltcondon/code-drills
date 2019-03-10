@@ -86,10 +86,26 @@
         event.preventDefault()
 
       // ===================== YOUR CODE HERE ==================
+      var location = $("#location").val()
+        var seacrhWord = $("#category").val()
 
+        $.ajax({
+          url: 'https://api.yelp.com/v3/businesses/search?term=' + searchWord + '&location=' + location + '',
+          method: "GET",
+          headers: {
+            authorization: "Bearer _slr779Sz3nXLwMcugX5TcTkTjvyzEwuBQRqKCJjj9whpEly-2OOZu136uhMG58EdEiqaIHAkSiGPStplnVhq89_OEmqjmhatAKucRCySc6wX2rSjEIptzp9BX-FXHYx"
 
+          }
+        }).then(function (response) {
+          console.log(response)
 
-
+          for (var i = 0; i < response.businesses.length; i++) {
+            $(".container").append('<img src=' + response.businesses[i].image_url + "/>")
+            $(".container").append("<h2" + response.businesses[i].name + "</h2>")
+            $(".container").append('<p>' +response.businesses[i].display_phone + '</p>')
+            $(".container").append("<p>" + response.businesses[i].location.address1 + ', ' + response.businesses[i].location.city + ', ' + response.businesses[i].location.zip_code + '</p>')
+          }
+        });
 
 
       // =======================================================

@@ -54,14 +54,19 @@
       });
 
       // ===================== YOUR CODE HERE ==================
-
-
+      $.ajax({
+          url: 'https://api.unsplash.com//photos/random?client_id=' + '42450b367d2e8612deb0c40d866c4d4be5b1f0be63dc94a98225a7b9f6480b7d' + '?b&query=' + searchTerm,
+          method: "GET"
+        }).then(function(response) {
+          console.log(response)
+          $(".holder").append("<img class='img' src='" + response.urls.raw + "'/>")
 
 
 
       //========================================================
 
     })
+  })
 
   </script>
 </body>
