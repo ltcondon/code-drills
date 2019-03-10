@@ -8,6 +8,7 @@
 
 Visit [this link](https://newsapi.org/) and sign up for an API key with newsAPI.org. 
 
+
 ### Step 2
 
 Visit [this link](https://newsapi.org/docs/get-started) to do some reasearch on this API's documentation. 
