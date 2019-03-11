@@ -8,11 +8,27 @@
 function populateButtons() {
   // Your code goes here
 
+  var helloBtn = $("<button>");
+  helloBtn.text("hello");
+  helloBtn.attr("data", "hello");
+
+  var worldBtn = $("<button>");
+  worldBtn.text("world");
+  worldBtn.attr("data", "world");
+
+  var clearBtn = $("<button>");
+  clearBtn.text("clear");
+  clearBtn.attr("data", "clear");
 
 
+  $("#buttons-area").append(helloBtn, worldBtn, clearBtn);
+  
+  var userBtn = $("<button>");
+  userBtn.text("display");
+  userBtn.attr("id", "user-btn")
+  userBtn.attr("data", "");
 
-
-
+  $("#user-button-area").append(userBtn);
 
   // End of your code area
 }
@@ -30,10 +46,10 @@ $(function () {
   document.onkeyup = function(event) {
     // Your code goes here
 
+    var lettersTyped = $("#user-button").attr("data");
+    lettersTyped += $(this).val();
 
-
-
-
+    $("#user-button").attr("data", lettersTyped);
 
 
     // End of your code area
@@ -45,11 +61,10 @@ $(function () {
   $(document).on("click", "button", function (event) {
     // Your code goes here
 
-
-
-
-
-
+    if ($(this).attr("data", "hello") || $(this).attr("data", "world")) {
+      $("#output").append($(this).attr("data"));
+    }
+    $("#output").append(lettersTyped);
 
     // End of your code area
   })
