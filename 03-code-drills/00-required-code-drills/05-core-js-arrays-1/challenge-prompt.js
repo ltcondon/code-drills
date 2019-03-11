@@ -1,5 +1,9 @@
 // Working with Arrays
 
+firstArray = [0, 1, 2, 3]
+secondArray = [4, 5, 6, 7]
+thirdArray = [8, 9, 10, 11]
+fourthArray = [12, 13, 14, 15];
 
 
 
@@ -18,6 +22,10 @@ console.log("============ firstArray ============")
 // Console log `firstArray`
 
 // Individually console log the elements within `firstArray`
+console.log(firstArray[0]);
+console.log(firstArray[1]);
+console.log(firstArray[2]);
+console.log(firstArray[3]);
 // Write 4 console logs, 1 for each element
 
 
@@ -34,6 +42,10 @@ console.log("============ secondArray ============")
 // Individually console log the elements within `secondArray`
 // Write 4 console logs, 1 for each element
 
+console.log(secondArray[0]);
+console.log(secondArray[1]);
+console.log(secondArray[2]);
+console.log(secondArray[3]);
 
 
 
@@ -48,7 +60,10 @@ console.log("============ thirdArray ============")
 // Individually console log the elements within `thirdArray`
 // Write 4 console logs, 1 for each element
 
-
+console.log(thirdArray[0]);
+console.log(thirdArray[1]);
+console.log(thirdArray[2]);
+console.log(thirdArray[3]);
 
 
 
@@ -57,7 +72,10 @@ console.log("============ thirdArray ============")
 console.log("============ fourthArray ============")
 //
 // Console log `fourthArray`
-
+console.log(fourthArray[0]);
+console.log(fourthArray[1]);
+console.log(fourthArray[2]);
+console.log(fourthArray[3]);
 
 // Individually console log the elements within `fourthArray`
 // Write 4 console logs, 1 for each element
